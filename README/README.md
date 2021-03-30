@@ -25,6 +25,10 @@ This document contains the following details:
 
 Description of the Topology: The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
+![image](https://github.com/AttackLife6/CyberProject1/blob/main/README/Images/Topology1.png)
+ 
+![image](https://github.com/AttackLife6/CyberProject1/blob/main/README/Images/ElkTopology.png)
+
 Load balancing ensures that the application will be highly accessable, in addition to restricting traffic to the network.
 A Load Balancer on Microsoft Azure protects servers from getting overloaded by traffic and possibly becoming unaccessable. If a single server goes down, the load balancer redirects traffic to the remaining servers automatically. Adding a new server to a server group, the load balancer automatically starts to send requests which improves service availability by preventing downtimes.
 
@@ -79,7 +83,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![image](https://github.com/AttackLife6/CyberProject1/blob/main/README/Images/DockerPs.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
