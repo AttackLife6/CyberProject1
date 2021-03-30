@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![image](https://github.com/AttackLife6/CyberProject1/blob/main/README/Images/First%20Diagram.png)
+![image](https://github.com/AttackLife6/CyberProject1/blob/main/README/Images/Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -23,17 +23,16 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
+Description of the Topology: The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-### Description of the Topology
+Load balancing ensures that the application will be highly accessable, in addition to restricting traffic to the network.
+A Load Balancer on Microsoft Azure protects servers from getting overloaded by traffic and possibly becoming unaccessable. If a single server goes down, the load balancer redirects traffic to the remaining servers automatically. Adding a new server to a server group, the load balancer automatically starts to send requests which improves service availability by preventing downtimes.
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+What does Filebeat watch for? Filebeat is a lightweight application installed as an agent on the server to centralize log data. Filebeat monitors log files and locations that users utilize then collects log events and forwards them for logging and indexing. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+What does Metricbeat record? Metricbeat is a lightweight application that when installed it will record and periodically collect data metrics from the server and forwards them for logging and indexing.
 
 The configuration details of each machine may be found below.
 
@@ -44,15 +43,16 @@ The configuration details of each machine may be found below.
 |     VirtualWebTwo    	|     Web Server  	|     10.0.0.6    	|     Linux    	|
 |     ELK-Server       	|     Monitoring  	|     10.1.0.4    	|     Linux    	|
 
-### Access Policies
+
+Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the JumpVirtualOne machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Port 5061 which is opened for Kibana
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by JumpVirtualOne.
+- JumpVirtualOne 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
@@ -63,15 +63,19 @@ A summary of the access policies in place can be found in the table below.
 |     VirtualWebTwo     	|     No                       	|     10.0.0.4-254              	|     Linux    	|
 |     ELK-Server        	|     No                       	|     10.0.0.4-254              	|     Linux    	|
 
-### Elk Configuration
+
+
+Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- This makes sure it is preventing vulnerabilities.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install docker.io
+- Install pip3
+- Install Docker python module
+- Increase virtual memory
+- Download and launch a docker
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
