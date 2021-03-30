@@ -29,14 +29,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+|      Name            	|      Function   	|      IP Address 	|      OS      	|
+|----------------------	|-----------------	|-----------------	|--------------	|
+|     JumpVirtualOne   	|     Gateway     	|     10.0.0.4    	|     Linux    	|
+|     VirtualWebOne    	|     Web Server  	|     10.0.0.5    	|     Linux    	|
+|     VirtualWebTwo    	|     Web Server  	|     10.0.0.6    	|     Linux    	|
+|     ELK-Server       	|     Monitoring  	|     10.1.0.4    	|     Linux    	|
 
 ### Access Policies
 
@@ -50,11 +49,12 @@ Machines within the network can only be accessed by _____.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+|      Name             	|      Publicly Accessible     	|      Allowed IP Addresses     	|      OS      	|
+|-----------------------	|------------------------------	|-------------------------------	|--------------	|
+|     JumpVirtualOne    	|     Yes                      	|     73.164.27.179             	|     Linux    	|
+|     VirtualWebOne     	|     No                       	|     10.0.0.4-254              	|     Linux    	|
+|     VirtualWebTwo     	|     No                       	|     10.0.0.4-254              	|     Linux    	|
+|     ELK-Server        	|     No                       	|     10.0.0.4-254              	|     Linux    	|
 
 ### Elk Configuration
 
